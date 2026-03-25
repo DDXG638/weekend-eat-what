@@ -1,0 +1,36 @@
+// 周末吃什么 - 微信小程序样式变量
+
+page {
+  // 温暖色调配色方案
+  --color-bg: #FAF6F1;           // 米白背景
+  --color-bg-card: #FFFFFF;       // 卡片白
+  --color-primary: #E07A3E;      // 焦糖橙 - 主色
+  --color-primary-light: #F4A460; // 浅橙
+  --color-secondary: #D4A373;    // 奶茶棕
+  --color-accent: #F5B041;        // 暖黄
+  --color-text-primary: #8b7a6e;  // 深棕文字
+  --color-text-secondary: #7A6B5E; // 浅棕文字
+  --color-text-light: #A89888;    // 淡棕
+  --color-border: #E8E0D8;        // 边框色
+  --color-tag-bg: #FEF3E2;        // 标签背景
+
+  // 字体
+  --font-display: 'PingFang SC', -apple-system, sans-serif;
+  --font-body: 'PingFang SC', -apple-system, sans-serif;
+
+  // 间距
+  --spacing-xs: 8rpx;
+  --spacing-sm: 16rpx;
+  --spacing-md: 24rpx;
+  --spacing-lg: 32rpx;
+  --spacing-xl: 48rpx;
+
+  // 圆角
+  --radius-sm: 12rpx;
+  --radius-md: 20rpx;
+  --radius-lg: 32rpx;
+
+  // 阴影
+  --shadow-sm: 0 4rpx 12rpx rgba(61, 49, 41, 0.06);
+  --shadow-md: 0 8rpx 24rpx rgba(61, 49, 41, 0.1);
+}

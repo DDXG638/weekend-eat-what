@@ -1,0 +1,80 @@
+<!--detail.wxml - 菜品详情页-->
+<mp-navigation-bar title="" back="{{true}}" color="#FFFFFF" background="rgba(0,0,0,0)" show="{{true}}" ext-class="replace-nav-bar"></mp-navigation-bar>
+<view class="detail">
+  <!-- 封面图区域 -->
+  <view class="detail__cover-section">
+    <image class="detail__cover-image" src="{{dish.coverImage}}" mode="aspectFill" />
+    <view class="detail__cover-overlay">
+      <text class="detail__dish-name">{{dish.name}}</text>
+      <view class="detail__dish-badges">
+        <text class="detail__badge">{{dish.cuisine}}</text>
+        <text class="detail__badge">{{dish.taste}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 基本信息 -->
+  <view class="detail__info-section">
+    <view class="detail__info-card">
+      <view class="detail__info-item">
+        <view class="detail__info-field">
+          <mp-icon icon="time" size="14" color="#D4A373"></mp-icon>
+          <text class="detail__info-field--label">烹饪时间</text>
+        </view>
+        <text class="detail__info-value">{{dish.cookTime}}</text>
+      </view>
+      <view class="detail__info-divider"></view>
+      <view class="detail__info-item">
+        <view class="detail__info-field">
+          <mp-icon icon="info" size="14" color="#D4A373"></mp-icon>
+          <text class="detail__info-field--label">难度</text>
+        </view>
+        <text class="detail__info-value">{{dish.difficulty}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 菜品描述 -->
+  <view class="detail__desc-section">
+    <text class="detail__section-title">菜品介绍</text>
+    <text class="detail__desc-text">{{dish.description}}</text>
+  </view>
+
+  <!-- 食材标签 -->
+  <view class="detail__ingredients-section">
+    <text class="detail__section-title">需要食材</text>
+    <view class="detail__tags-wrap">
+      <text class="detail__ingredient-tag" wx:for="{{dish.ingredients}}" wx:key="*">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 教程列表 -->
+  <view class="detail__tutorial-section">
+    <text class="detail__section-title">制作教程</text>
+    <text class="detail__section-subtitle">点击卡片可跳转到对应平台查看视频教程</text>
+
+    <view class="detail__tutorial-list">
+      <block wx:for="{{dish.tutorials}}" wx:key="platform">
+        <view class="detail__tutorial-card" bindtap="onTutorialTap" data-url="{{item.url}}">
+          <image class="detail__tutorial-cover" src="{{item.coverImage}}" mode="aspectFill" />
+          <view class="detail__tutorial-info">
+            <view class="detail__platform-tag detail__platform-tag--{{item.platform}}">
+              <text class="detail__platform-name">{{item.platformText}}</text>
+            </view>
+            <text class="detail__tutorial-title">{{item.title}}</text>
+            <text class="detail__tutorial-source">来源于{{item.platformText}}</text>
+          </view>
+          <view class="detail__tutorial-arrow">
+            <text class="detail__arrow-text">查看教程</text>
+            <mp-icon class="detail__arrow-icon" icon="sending" size="18" color="#E07A3E"></mp-icon>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="detail__bottom-tip">
+    <text class="detail__tip-text">内容来源于第三方平台，点击上方卡片可跳转查看</text>
+  </view>
+</view>

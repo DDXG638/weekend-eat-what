@@ -1,0 +1,136 @@
+// index.scss - 首页样式
+
+.home {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding-bottom: 120rpx;
+  // 适配navigation-bar高度
+  // padding-top: 20rpx;
+
+  // 顶部搜索栏
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 20rpx;
+    padding: 24rpx 32rpx;
+    background: linear-gradient(180deg, #FDF8F3 0%, var(--color-bg) 100%);
+  }
+
+  &__search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 72rpx;
+    background-color: var(--color-bg-card);
+    border-radius: 36rpx;
+    padding: 0 28rpx;
+    box-shadow: var(--shadow-sm);
+  }
+
+  &__search-placeholder {
+    font-size: 28rpx;
+    color: var(--color-text-light);
+    margin-left: 16rpx;
+  }
+
+  &__pref-btn {
+    width: 72rpx;
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-card);
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+  }
+
+  // 推荐标题
+  &__section-title {
+    padding: 32rpx 32rpx 24rpx;
+  }
+
+  &__title-text {
+    display: block;
+    font-size: 40rpx;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    letter-spacing: 2rpx;
+  }
+
+  &__title-sub {
+    display: block;
+    font-size: 24rpx;
+    color: var(--color-text-light);
+    margin-top: 8rpx;
+  }
+
+  // 瀑布流菜品列表
+  &__dish-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 24rpx;
+    gap: 20rpx 0;
+  }
+
+  &__dish-card {
+    width: calc(50% - 10rpx);
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  &__dish-cover {
+    width: 100%;
+    height: 280rpx;
+    background-color: var(--color-border);
+  }
+
+  &__dish-info {
+    padding: 20rpx;
+  }
+
+  &__dish-name {
+    display: block;
+    font-size: 30rpx;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 8rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__dish-meta {
+    display: flex;
+    align-items: center;
+    font-size: 22rpx;
+    color: var(--color-text-light);
+    margin-bottom: 12rpx;
+  }
+
+  &__dish-dot {
+    margin: 0 8rpx;
+  }
+
+  &__dish-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8rpx;
+  }
+
+  &__tag {
+    padding: 6rpx 14rpx;
+    font-size: 20rpx;
+    color: var(--color-primary);
+    background-color: var(--color-tag-bg);
+    border-radius: 20rpx;
+  }
+}

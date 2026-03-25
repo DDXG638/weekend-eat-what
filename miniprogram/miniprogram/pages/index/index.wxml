@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<mp-navigation-bar title="周末吃什么" back="{{false}}" color="#8b7a6e" background="#FAF6F1" show="{{true}}"></mp-navigation-bar>
+<view class="home">
+  <!-- 顶部搜索栏 -->
+  <view class="home__header">
+    <view class="home__search-bar" bindtap="onSearchTap">
+      <mp-icon icon="search" size="18" color="#A89888"></mp-icon>
+      <text class="home__search-placeholder">搜索菜品...</text>
+    </view>
+    <view class="home__pref-btn" bindtap="onPrefBtnTap">
+      <mp-icon icon="pencil" size="16" color="#8b7a6e"></mp-icon>
+    </view>
+  </view>
+
+  <!-- 推荐标题 -->
+  <view class="home__section-title">
+    <text class="home__title-text">今日推荐</text>
+    <text class="home__title-sub">根据你的偏好精选</text>
+  </view>
+
+  <!-- 瀑布流菜品列表 -->
+  <view class="home__dish-grid">
+    <block wx:for="{{dishList}}" wx:key="id">
+      <view class="home__dish-card" bindtap="onDishTap" data-id="{{item.id}}">
+        <image class="home__dish-cover" src="{{item.coverImage}}" mode="aspectFill" />
+        <view class="home__dish-info">
+          <text class="home__dish-name">{{item.name}}</text>
+          <view class="home__dish-meta">
+            <text class="home__dish-cuisine">{{item.cuisine}}</text>
+            <text class="home__dish-dot">·</text>
+            <text class="home__dish-time">{{item.cookTime}}</text>
+          </view>
+          <view class="home__dish-tags">
+            <text class="home__tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="index">{{tag}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 偏好设置浮层组件 -->
+  <pref-modal
+    visible="{{showPrefModal}}"
+    initial-region="{{selectedRegion}}"
+    initial-cuisines="{{selectedCuisines}}"
+    initial-tastes="{{selectedTastes}}"
+    bind:close="onClosePrefModal"
+    bind:save="onSavePref"
+  ></pref-modal>
+</view>

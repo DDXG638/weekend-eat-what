@@ -1,0 +1,53 @@
+<!--pref-modal.wxml - 偏好设置浮层组件-->
+<view class="pref-modal {{visible ? 'pref-modal--show' : ''}}" wx:if="{{visible}}">
+  <view class="pref-modal__mask" bindtap="onClose"></view>
+  <view class="pref-modal__content">
+    <view class="pref-modal__header">
+      <text class="pref-modal__title">{{title}}</text>
+      <text class="pref-modal__subtitle">{{subtitle}}</text>
+    </view>
+
+    <!-- 地区选择 -->
+    <view class="pref-modal__form-item" wx:if="{{showRegion}}">
+      <text class="pref-modal__form-label">{{regionLabel}}</text>
+      <picker mode="selector" range="{{regions}}" bindchange="onRegionChange">
+        <view class="pref-modal__picker">
+          <text class="{{selectedRegion ? '' : 'pref-modal__picker--placeholder'}}">{{selectedRegion || regionPlaceholder}}</text>
+          <mp-icon class="pref-modal__picker--icon" icon="arrow" size="14" color="#A89888"></mp-icon>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 菜系选择 -->
+    <view class="pref-modal__form-item" wx:if="{{showCuisine}}">
+      <text class="pref-modal__form-label">{{cuisineLabel}}</text>
+      <view class="pref-modal__tag-list">
+        <view
+          wx:for="{{cuisineOptions}}"
+          wx:key="name"
+          class="pref-modal__tag-item {{ item.selected ? 'pref-modal__tag-item--active' : '' }}"
+          bindtap="onCuisineTap"
+          data-cuisine="{{item.name}}"
+        >{{item.name}}</view>
+      </view>
+    </view>
+
+    <!-- 口味选择 -->
+    <view class="pref-modal__form-item" wx:if="{{showTaste}}">
+      <text class="pref-modal__form-label">{{tasteLabel}}</text>
+      <view class="pref-modal__tag-list">
+        <view
+          wx:for="{{tasteOptions}}"
+          wx:key="name"
+          class="pref-modal__tag-item {{ item.selected ? 'pref-modal__tag-item--active' : '' }}"
+          bindtap="onTasteTap"
+          data-taste="{{item.name}}"
+        >{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="pref-modal__footer">
+      <button class="pref-modal__save-btn" bindtap="onSave">{{confirmText}}</button>
+    </view>
+  </view>
+</view>

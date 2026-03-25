@@ -1,0 +1,273 @@
+// detail.scss - 菜品详情页样式
+// 覆盖nav样式
+.replace-nav-bar {
+  .weui-navigation-bar__placeholder {
+    display: none;
+  }
+  .weui-navigation-bar__btn_goback_wrapper {
+    // background-color: rgba(0, 0, 0, 0.2);
+    // border-radius: 10rpx;
+  }
+  .weui-navigation-bar__inner .weui-navigation-bar__left .weui-navigation-bar__btn_goback {
+    background-color: currentColor;
+  }
+}
+.detail {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding-bottom: 120rpx;
+  // 适配透明navigation-bar状态栏高度
+  // padding-top: 40rpx;
+
+  // 封面图区域 - 延伸至状态栏
+  &__cover-section {
+    position: relative;
+    width: 100%;
+    height: 480rpx;
+    // margin-top: -40rpx;
+  }
+
+  &__cover-image {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-border);
+  }
+
+  &__cover-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40rpx 32rpx 54rpx;
+    background: linear-gradient(180deg, transparent 0%, rgba(61, 49, 41, 0.8) 100%);
+  }
+
+  &__dish-name {
+    display: block;
+    font-size: 48rpx;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 4rpx;
+    margin-bottom: 16rpx;
+  }
+
+  &__dish-badges {
+    display: flex;
+    gap: 12rpx;
+  }
+
+  &__badge {
+    padding: 8rpx 20rpx;
+    font-size: 22rpx;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20rpx;
+    backdrop-filter: blur(8rpx);
+  }
+
+  // 基本信息
+  &__info-section {
+    padding: 0 32rpx;
+    margin-top: -40rpx;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__info-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    padding: 32rpx 24rpx;
+    box-shadow: var(--shadow-md);
+  }
+
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__info-field {
+    margin-bottom: 8rpx;
+    display: flex;
+    align-items: center;
+    gap: 8rpx;
+
+    &--label {
+      font-size: 22rpx;
+      color: var(--color-text-light);
+    }
+  }
+
+  &__info-value {
+    display: block;
+    font-size: 30rpx;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  &__info-divider {
+    width: 2rpx;
+    height: 60rpx;
+    background-color: var(--color-border);
+  }
+
+  // 描述
+  &__desc-section {
+    padding: 40rpx 32rpx 32rpx;
+  }
+
+  &__section-title {
+    display: block;
+    font-size: 36rpx;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 20rpx;
+  }
+
+  &__desc-text {
+    display: block;
+    font-size: 28rpx;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+  }
+
+  // 食材标签
+  &__ingredients-section {
+    padding: 0 32rpx 32rpx;
+  }
+
+  &__tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16rpx;
+  }
+
+  &__ingredient-tag {
+    padding: 14rpx 28rpx;
+    font-size: 26rpx;
+    color: var(--color-primary);
+    background-color: var(--color-tag-bg);
+    border-radius: var(--radius-sm);
+    border: 2rpx solid var(--color-border);
+  }
+
+  // 教程列表
+  &__tutorial-section {
+    padding: 0 32rpx 32rpx;
+  }
+
+  &__section-subtitle {
+    display: block;
+    font-size: 24rpx;
+    color: var(--color-text-light);
+    margin-bottom: 24rpx;
+  }
+
+  &__tutorial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24rpx;
+  }
+
+  &__tutorial-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  &__tutorial-cover {
+    width: 200rpx;
+    height: 140rpx;
+    background-color: var(--color-border);
+    flex-shrink: 0;
+  }
+
+  &__tutorial-info {
+    flex: 1;
+    padding: 20rpx;
+    min-width: 0;
+  }
+
+  &__platform-tag {
+    display: inline-flex;
+    padding: 6rpx 14rpx;
+    border-radius: 8rpx;
+    margin-bottom: 10rpx;
+
+    &--bilibili {
+      background-color: #FB7299;
+    }
+
+    &--xiaohongshu {
+      background-color: #FE2C55;
+    }
+
+    &--douyin {
+      background-color: #242424;
+    }
+  }
+
+  &__platform-name {
+    font-size: 20rpx;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+
+  &__tutorial-title {
+    display: block;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 8rpx;
+  }
+
+  &__tutorial-source {
+    display: block;
+    font-size: 22rpx;
+    color: var(--color-text-light);
+  }
+
+  &__tutorial-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 24rpx;
+    flex-shrink: 0;
+  }
+
+  &__arrow-text {
+    font-size: 20rpx;
+    color: var(--color-text-light);
+  }
+
+  &__arrow-icon {
+    transform: rotateY(180deg);
+  }
+
+  // 底部提示
+  &__bottom-tip {
+    padding: 32rpx;
+    text-align: center;
+  }
+
+  &__tip-text {
+    font-size: 22rpx;
+    color: var(--color-text-light);
+  }
+}
