@@ -140,10 +140,16 @@
     padding: 0 32rpx 32rpx;
   }
 
+  &__tags-scroll {
+    width: 100%;
+    margin-top: 16rpx;
+  }
+
   &__tags-wrap {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 16rpx;
+    width: max-content;
   }
 
   &__ingredient-tag {
@@ -153,6 +159,103 @@
     background-color: var(--color-tag-bg);
     border-radius: var(--radius-sm);
     border: 2rpx solid var(--color-border);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  // 食材购买入口
+  &__purchase-section {
+    padding: 0 32rpx 32rpx;
+  }
+
+  &__purchase-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+
+  &__purchase-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    padding: 24rpx;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  &__purchase-icon {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20rpx;
+    flex-shrink: 0;
+  }
+
+  &__purchase-icon-text {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  &__purchase-name {
+    flex: 1;
+    font-size: 30rpx;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+
+  &__purchase-arrow {
+    display: flex;
+    align-items: center;
+    gap: 8rpx;
+  }
+
+  // 一行布局样式
+  &__purchase-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16rpx;
+  }
+
+  &__purchase-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    padding: 24rpx 12rpx;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__purchase-icon--row {
+    width: 56rpx;
+    height: 56rpx;
+    margin-right: 0;
+    margin-bottom: 12rpx;
+  }
+
+  &__purchase-icon-text--row {
+    font-size: 26rpx;
+  }
+
+  &__purchase-name--row {
+    font-size: 22rpx;
+    text-align: center;
   }
 
   // 教程列表

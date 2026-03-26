@@ -43,8 +43,40 @@
   <!-- 食材标签 -->
   <view class="detail__ingredients-section">
     <text class="detail__section-title">需要食材</text>
-    <view class="detail__tags-wrap">
-      <text class="detail__ingredient-tag" wx:for="{{dish.ingredients}}" wx:key="*">{{item}}</text>
+    <scroll-view class="detail__tags-scroll" scroll-x enable-flex>
+      <view class="detail__tags-wrap">
+        <text class="detail__ingredient-tag" wx:for="{{dish.ingredients}}" wx:key="*">{{item}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 食材购买入口 -->
+  <view class="detail__purchase-section">
+    <text class="detail__section-title">食材购买</text>
+    <text class="detail__section-subtitle">点击卡片可跳转到对应平台购买食材</text>
+
+    <!-- 多个平台时使用一行布局 -->
+    <view class="detail__purchase-row" wx:if="{{groceryPlatforms.length > 1}}">
+      <view class="detail__purchase-item" wx:for="{{groceryPlatforms}}" wx:key="id" bindtap="onGroceryTap" data-platform="{{item.id}}">
+        <view class="detail__purchase-icon detail__purchase-icon--row" style="background-color: {{item.color}}">
+          <text class="detail__purchase-icon-text">{{item.name[0]}}</text>
+        </view>
+        <text class="detail__purchase-name detail__purchase-name--row">{{item.name}}</text>
+      </view>
+    </view>
+
+    <!-- 单个平台时使用原有卡片布局 -->
+    <view class="detail__purchase-list" wx:else>
+      <view class="detail__purchase-card" wx:for="{{groceryPlatforms}}" wx:key="id" bindtap="onGroceryTap" data-platform="{{item.id}}">
+        <view class="detail__purchase-icon" style="background-color: {{item.color}}">
+          <text class="detail__purchase-icon-text">{{item.name[0]}}</text>
+        </view>
+        <text class="detail__purchase-name">{{item.name}}</text>
+        <view class="detail__purchase-arrow">
+          <text class="detail__arrow-text">去购买</text>
+          <mp-icon class="detail__arrow-icon" icon="sending" size="18" color="#E07A3E"></mp-icon>
+        </view>
+      </view>
     </view>
   </view>
 
