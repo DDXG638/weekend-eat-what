@@ -117,7 +117,7 @@
 
   // 描述
   &__desc-section {
-    padding: 40rpx 32rpx 32rpx;
+    padding: 32rpx 32rpx 24rpx;
   }
 
   &__section-title {
@@ -125,7 +125,7 @@
     font-size: 36rpx;
     font-weight: 600;
     color: var(--color-text-primary);
-    margin-bottom: 20rpx;
+    margin-bottom: 12rpx;
   }
 
   &__desc-text {
@@ -137,7 +137,7 @@
 
   // 食材标签
   &__ingredients-section {
-    padding: 0 32rpx 32rpx;
+    padding: 0 32rpx 24rpx;
   }
 
   &__tags-scroll {
@@ -165,7 +165,7 @@
 
   // 食材购买入口
   &__purchase-section {
-    padding: 0 32rpx 32rpx;
+    padding: 0 32rpx 24rpx;
   }
 
   &__purchase-list {
@@ -260,14 +260,14 @@
 
   // 教程列表
   &__tutorial-section {
-    padding: 0 32rpx 32rpx;
+    padding: 0 32rpx 24rpx;
   }
 
   &__section-subtitle {
     display: block;
     font-size: 24rpx;
     color: var(--color-text-light);
-    margin-bottom: 24rpx;
+    margin-bottom: 16rpx;
   }
 
   &__tutorial-list {
