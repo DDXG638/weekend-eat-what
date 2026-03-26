@@ -20,10 +20,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ``` Plain Text
 ├── docs/
 │   ├── project.md       # 项目完整方案文档
-│   └── project-mvp.md   # MVP阶段方案文档
+│   ├── project-mvp.md  # MVP阶段方案文档
+│   └── UI_DESIGN.md    # UI设计说明
 ├── CLAUDE.md            # 本文件
 └── miniprogram/
-    ├── UI_DESIGN.md     # UI设计说明
     ├── project.config.json  # 微信开发者工具配置
     ├── package.json     # 项目依赖
     ├── sitemap.json     # 微信小程序 sitemap 配置
@@ -67,7 +67,7 @@ MVP阶段，详见 [project-mvp.md](./docs/project-mvp.md)
 
 ## 设计规范
 
-详见 [UI_DESIGN.md](./miniprogram/UI_DESIGN.md)
+详见 [docs/UI_DESIGN.md](./docs/UI_DESIGN.md)
 
 配色方案（温暖治愈风格）：
 
