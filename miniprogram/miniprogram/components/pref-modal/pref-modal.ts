@@ -93,17 +93,6 @@ ComponentWithComputed({
   },
 
   data: {
-    visible: false,
-    title: '设置你的偏好',
-    subtitle: '这样我能为你推荐更合适的菜品',
-    showRegion: true,
-    showCuisine: true,
-    showTaste: true,
-    regionLabel: '你在哪个省份？',
-    regionPlaceholder: '请选择省份',
-    cuisineLabel: '喜欢什么菜系？',
-    tasteLabel: '偏好什么口味？',
-    confirmText: '保存偏好',
     selectedRegion: '',
     selectedCuisines: [] as string[],
     selectedTastes: [] as string[],
