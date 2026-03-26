@@ -17,8 +17,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 目录结构
 
-```
-├── project.md           # 项目方案文档
+``` Plain Text
+├── docs/
+│   ├── project.md       # 项目完整方案文档
+│   └── project-mvp.md   # MVP阶段方案文档
 ├── CLAUDE.md            # 本文件
 └── miniprogram/
     ├── UI_DESIGN.md     # UI设计说明
@@ -44,47 +46,46 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
         │       └── detail.json
         └── utils/
             └── util.ts  # 工具函数
+            └── constants.ts  # 地区、菜系、口味 等常量数据
 ```
 
 ## 当前实现状态
 
-- `miniprogram/miniprogram/app.ts/json/scss`：小程序入口和配置
-- `miniprogram/miniprogram/data/dishes.ts`：本地菜品数据（6道菜）
-- `miniprogram/miniprogram/pages/index`：首页，包含搜索栏、瀑布流菜品列表、偏好设置浮层、推荐算法
-- `miniprogram/miniprogram/pages/detail`：菜品详情页，包含封面、信息卡片、描述、食材标签、教程列表
-
-## 待完成
-
-1. ~~创建 `miniprogram/miniprogram/app.ts` 入口文件~~ ✅
-2. ~~创建 `miniprogram/miniprogram/app.json` 配置文件~~ ✅
-3. ~~创建 `miniprogram/project.config.json` 微信开发者工具配置~~ ✅
-4. ~~创建 `miniprogram/sitemap.json` 配置文件~~ ✅
-5. ~~完善首页和详情页逻辑（推荐算法、数据绑定）~~ ✅
-6. ~~创建本地菜品数据 `miniprogram/miniprogram/data/dishes.ts`~~ ✅
-7. 图标资源：使用 weui-miniprogram 的 Icon 组件，无需额外图标文件
-8. 配置微信小程序跳转功能（后期）
+MVP阶段，详见 [project-mvp.md](./docs/project-mvp.md)
 
 ## 开发规范
 
 ### UI框架
+
 - 项目引入 [weui-miniprogram](https://wechat-miniprogram.github.io/weui/docs/quickstart.html) 组件库，后续开发优先使用组件库提供的组件
 - 图标优先使用 weui-miniprogram 的 [Icon组件](https://wechat-miniprogram.github.io/weui/docs/icon.html)
 
 ### 样式规范
+
 - 使用 `.scss` 文件编写样式（而非 `.wxss`）
 - className 命名采用 BEM 方式，例如：`block__element--modifier`
 
-### 目录结构调整说明
-- 样式文件后缀需从 `.wxss` 改为 `.scss`
-
 ## 设计规范
 
+详见 [UI_DESIGN.md](./miniprogram/UI_DESIGN.md)
+
 配色方案（温暖治愈风格）：
+
 - 背景：#FAF6F1（米白）
 - 主色：#E07A3E（焦糖橙）
 - 辅助色：#D4A373（奶茶棕）
 
 平台标识颜色：
+
 - B站：#FB7299
 - 小红书：#FE2C55
 - 抖音：#242424
+
+## 文档更新规范
+
+每次有改动后都要考虑是否需要更新文档，并进行文档更新。
+
+文档主要涉及如下几个文件：
+
+- CLAUDE.md
+- docs/*.md
