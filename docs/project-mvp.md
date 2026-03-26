@@ -82,4 +82,5 @@ interface Tutorial {
 - `miniprogram/miniprogram/app.ts/json/scss`：小程序入口和配置
 - `miniprogram/miniprogram/data/dishes.ts`：本地菜品数据（6道菜）
 - `miniprogram/miniprogram/pages/index`：首页，包含搜索栏、瀑布流菜品列表、偏好设置浮层、推荐算法
-- `miniprogram/miniprogram/pages/detail`：菜品详情页，包含封面、信息卡片、描述、食材标签、教程列表
+- `miniprogram/miniprogram/pages/detail`：菜品详情页，包含封面、信息卡片、描述、食材标签（横向滚动）、食材购买入口、懒人方案（外卖入口）、教程列表
+- `miniprogram/miniprogram/utils/constants.ts`：常量数据（地区、菜系、口味、买菜平台、外卖平台）
