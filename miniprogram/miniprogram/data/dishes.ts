@@ -47,7 +47,7 @@ export const dishes: Dish[] = [
         platformText: '小红书',
         title: '在家做出餐厅级红烧肉',
         url: 'https://www.xiaohongshu.com/explore/xxx',
-        coverImage: 'https://sns-webpic-qc.xhscdn.com/202603251543/995f13fb8d603c293c43cbf52ec2050e/1040g00831oa0i2rq4s005nlooq5g8j8qt5b4rr8!nc_n_webp_mw_1'
+        coverImage: 'https://i0.hdslb.com/bfs/archive/5aca8d337acb8c456fc0cb2c474af14a86274e59.jpg@672w_378h_1c_!web-search-common-cover'
       }
     ],
     tags: ['下饭菜', '肉菜', '经典', '酱香']
@@ -89,7 +89,7 @@ export const dishes: Dish[] = [
         platformText: '小红书',
         title: '零失败的清蒸鲈鱼',
         url: 'https://www.xiaohongshu.com/explore/zzz',
-        coverImage: 'https://sns-webpic-qc.xhscdn.com/202603252023/755b267f010a1744d0337504c1433e4d/1040g00831seu25tt5k005na7tl14f311j3psmd8!nc_n_webp_mw_1'
+        coverImage: 'https://i0.hdslb.com/bfs/archive/a5733684c3c828106bea571a724f09e8e64b1f17.jpg@672w_378h_1c_!web-search-common-cover'
       }
     ],
     tags: ['清淡', '海鲜', '健康', '粤菜']

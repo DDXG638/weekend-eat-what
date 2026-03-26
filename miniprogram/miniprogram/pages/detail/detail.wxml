@@ -45,7 +45,7 @@
     <text class="detail__section-title">需要食材</text>
     <scroll-view class="detail__tags-scroll" scroll-x enable-flex>
       <view class="detail__tags-wrap">
-        <text class="detail__ingredient-tag" wx:for="{{dish.ingredients}}" wx:key="*">{{item}}</text>
+        <text class="detail__ingredient-tag" wx:for="{{dish.ingredients}}" wx:key="index">{{item}}</text>
       </view>
     </scroll-view>
   </view>
@@ -102,6 +102,56 @@
           </view>
         </view>
       </block>
+    </view>
+  </view>
+
+  <!-- 懒人方案（外卖入口） -->
+  <view class="detail__delivery-section">
+    <text class="detail__section-title">懒人方案</text>
+    <text class="detail__section-subtitle">不想动手？点外卖吧！</text>
+
+    <view class="detail__delivery-list">
+      <view class="detail__delivery-card detail__delivery-card--meituan" bindtap="onDeliveryTap" data-platform="meituan">
+        <view class="detail__delivery-icon-wrap">
+          <text class="detail__delivery-icon">🍜</text>
+        </view>
+        <view class="detail__delivery-info">
+          <text class="detail__delivery-name">美团外卖</text>
+          <text class="detail__delivery-desc">海量商家，随心选</text>
+        </view>
+        <view class="detail__delivery-btn">
+          <text>去下单</text>
+          <mp-icon class="detail__delivery-btn-icon" icon="sending" size="16" color="#FFFFFF"></mp-icon>
+        </view>
+      </view>
+
+      <view class="detail__delivery-card detail__delivery-card--ele" bindtap="onDeliveryTap" data-platform="ele">
+        <view class="detail__delivery-icon-wrap">
+          <text class="detail__delivery-icon">🍔</text>
+        </view>
+        <view class="detail__delivery-info">
+          <text class="detail__delivery-name">饿了么</text>
+          <text class="detail__delivery-desc">外卖送到家</text>
+        </view>
+        <view class="detail__delivery-btn">
+          <text>去下单</text>
+          <mp-icon class="detail__delivery-btn-icon" icon="sending" size="16" color="#FFFFFF"></mp-icon>
+        </view>
+      </view>
+
+      <view class="detail__delivery-card detail__delivery-card--jd" bindtap="onDeliveryTap" data-platform="jd">
+        <view class="detail__delivery-icon-wrap">
+          <text class="detail__delivery-icon">🛒</text>
+        </view>
+        <view class="detail__delivery-info">
+          <text class="detail__delivery-name">京东外卖</text>
+          <text class="detail__delivery-desc">品质有保障</text>
+        </view>
+        <view class="detail__delivery-btn">
+          <text>去下单</text>
+          <mp-icon class="detail__delivery-btn-icon" icon="sending" size="16" color="#FFFFFF"></mp-icon>
+        </view>
+      </view>
     </view>
   </view>
 

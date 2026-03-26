@@ -9,3 +9,10 @@ export const groceryPlatforms = [
   { id: 'xixiang', name: '小象超市', color: '#FF6B6B' },
   { id: 'duoduomai', name: '多多买菜', color: '#FF6600' }
 ];
+
+// 外卖平台（懒人方案）
+export const deliveryPlatforms = [
+  { id: 'meituan', name: '美团', color: '#FFD100' },
+  { id: 'ele', name: '饿了么', color: '#1677FF' },
+  { id: 'jd', name: '京东', color: '#E4393C' }
+];

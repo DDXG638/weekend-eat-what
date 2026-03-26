@@ -168,6 +168,97 @@
     padding: 0 32rpx 24rpx;
   }
 
+  // 懒人方案（外卖入口）
+  &__delivery-section {
+    padding: 0 32rpx 32rpx;
+  }
+
+  &__delivery-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+
+  &__delivery-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: 28rpx 24rpx;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: var(--shadow-md);
+    }
+
+    &--meituan {
+      background: linear-gradient(135deg, #FFD100 0%, #FFAB00 100%);
+    }
+
+    &--ele {
+      background: linear-gradient(135deg, #1677FF 0%, #0D5AE5 100%);
+    }
+
+    &--jd {
+      background: linear-gradient(135deg, #E4393C 0%, #C53638 100%);
+    }
+  }
+
+  &__delivery-icon-wrap {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20rpx;
+    flex-shrink: 0;
+  }
+
+  &__delivery-icon {
+    font-size: 40rpx;
+  }
+
+  &__delivery-info {
+    flex: 1;
+  }
+
+  &__delivery-name {
+    display: block;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 6rpx;
+  }
+
+  &__delivery-desc {
+    display: block;
+    font-size: 24rpx;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  &__delivery-btn {
+    display: flex;
+    align-items: center;
+    gap: 8rpx;
+    padding: 14rpx 24rpx;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 30rpx;
+
+    &-icon {
+      transform: rotateY(180deg);
+    }
+
+    text {
+      font-size: 24rpx;
+      font-weight: 500;
+      color: #FFFFFF;
+    }
+  }
+
   &__purchase-list {
     display: flex;
     flex-direction: column;
